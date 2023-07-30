@@ -10,6 +10,7 @@
     border-radius: 8px;
     border: 1px solid #95A0A7;
     margin: 4rem auto;
+    box-shadow: #FFE0B3 -12px 12px;
 }
 
 .form-title {

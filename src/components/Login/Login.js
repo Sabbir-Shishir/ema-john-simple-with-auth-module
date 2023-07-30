@@ -8,7 +8,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/shop';
 
     const handleSubmit = (e) => {
         e.preventDefault();

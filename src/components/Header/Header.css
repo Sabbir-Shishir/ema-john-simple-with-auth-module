@@ -23,14 +23,26 @@
     color: #FF9900;
 }
 
-.login-btn,
 .logout-btn {
-    border: 2px solid rgba(255, 153, 0, 0.30);
+    border: 2px solid rgb(255, 48, 48, 0.553);
+    color: rgb(255, 48, 48, 0.553) !important;
     padding: 8px 14px;
     border-radius: 5px;
 }
 
-.login-btn:hover,
+.login-btn {
+    border: 2px solid rgba(255, 153, 0, 0.553);
+    color: rgba(255, 153, 0, 0.553) !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
 .logout-btn:hover {
+    border-color: #db0c0c;
+    color: #db0c0c !important;
+}
+
+.login-btn:hover {
     border-color: #FF9900;
+    color: #FF9900 !important;
 }
