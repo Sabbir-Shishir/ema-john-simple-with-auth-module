@@ -3,9 +3,10 @@ import './Login.css';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import { useNavigate } from "react-router-dom";
+import { logoURL } from './logoURL';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/shop';
@@ -21,7 +22,17 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate(from, {replace: true});
+                navigate(from, { replace: true });
+            })
+            .catch(error => alert(error))
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => alert(error))
     }
@@ -40,6 +51,11 @@ const Login = () => {
                 <input className='btn-submit' type="submit" value="Login" />
             </form>
             <p className='signUp-link'>New to Ema-john? <Link to='/signup' className='link'>Create New Account</Link></p>
+            <p className='alternative-way-divider'>or</p>
+            <button onClick={handleGoogleSignIn}>
+                <img src={logoURL} alt="wrong" />
+                Continue with Google
+            </button>
         </div>
     );
 };
