@@ -15,6 +15,22 @@
     transition: all ease-in-out .2s;
 }
 
+.navbar-logo {
+    margin-left: 0 !important;
+}
+
 .navbar a:hover {
-    color: orange;
+    color: #FF9900;
+}
+
+.login-btn,
+.logout-btn {
+    border: 2px solid rgba(255, 153, 0, 0.30);
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+    border-color: #FF9900;
 }

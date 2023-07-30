@@ -31,11 +31,19 @@ const Orders = () => {
                     ></ReviewItem>)
                 }
                 {
-                    cart.length === 0 && <h2>No Items for Review. Please <Link to='/shop'>Shop More</Link></h2>
+                    cart.length === 0 &&
+                    <div className='cart-empty-content'>
+                        <h2 className='no-item-txt'>No Items for Review</h2>
+                        <Link to='/shop' className='shop-more-link'>Shop More</Link>
+                    </div>
                 }
             </div>
             <div className='cart-container'>
-                <Cart cart={cart} clearCart={clearCart}></Cart>
+                <Cart cart={cart} clearCart={clearCart}>
+                    <Link to='/shipping'>
+                        <button className='shipping-btn'>proceed shipping</button>
+                    </Link>
+                </Cart>
             </div>
         </div>
     );

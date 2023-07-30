@@ -8,6 +8,9 @@ import About from './components/About/About';
 import { productsAndCartLoader } from './loaders/productsAndCartLoader';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import Shipping from './components/Shipping/Shipping';
+import PrivateRoute from './routes/PrivateRoute';
+import Home from './components/Home/Home';
 
 
 function App() {
@@ -18,8 +21,7 @@ function App() {
       children: [
         {
           path: '/',
-          loader: () => fetch('products.json'),
-          element: <Shop></Shop>
+          element: <Home></Home>
         },
         {
           path: '/shop',
@@ -34,6 +36,10 @@ function App() {
         {
           path: '/inventory',
           element: <Inventory></Inventory>
+        },
+        {
+          path: '/shipping',
+          element: <PrivateRoute><Shipping></Shipping></PrivateRoute>
         },
         {
           path: '/about',
